@@ -251,4 +251,3 @@ Objective, AI-driven, reproducible clinical measurement.
 
 
 
-Tell me which direction you want.
