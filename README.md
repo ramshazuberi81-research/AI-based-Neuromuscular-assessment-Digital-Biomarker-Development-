@@ -1,91 +1,86 @@
-# AI-based-Neuromuscular-assessment-Digital-Biomarker-Development-
-AI clinical decision support system for automated facial palsy assessment using computer vision
-Hybrid AI Facial Motor Function Assessment System
-*(Patient View + Neurologist Clinical View)*
+ AI_Facial_Clinical
 
-Overview
+Hybrid AI-Powered Facial Motor Function Assessment System*(Patient Engagement + Neurologist Clinical Evaluation)
 
-AI_Facial_Clinical is an AI-powered clinical tool designed to provide objective facial motor function analysis for:
+---
+System Overview
+
+AI_Facial_Clinical is an AI-driven clinical platform designed to provide objective, reproducible, and quantitative assessment of facial motor function.
+
+Target Conditions:
 
 * Bell’s Palsy
 * Post-stroke facial weakness
 * Neuromuscular facial asymmetry
-* Future expansion: Parkinson’s monitoring
+* Future: Parkinson’s disease motor monitoring
 
-Unlike subjective grading systems, this platform delivers:
+Key Advantages:
 
-* Real-time facial symmetry analysis
+* Real-time facial symmetry computation
 * Quantitative motor scoring
-* Speech impairment analysis
-* Progress tracking over time
-* Clinical PDF reporting
+* Speech clarity assessment
+* Longitudinal progress tracking
+* Automated clinical PDF reporting
+
+Illustrative Overview:
+
+![System Overview](https://www.researchgate.net/publication/352975738/figure/fig3/AS%3A11431281102529418%401669482668798/The-architecture-of-the-proposed-AI-and-IoT-based-healthcare-model.png)
+Figure 1: High-level AI + Patient-Clinician system architecture
 
 ---
 
- Clinical Problem
+ Clinical Motivation
 
-Traditional grading systems such as:
+Current Challenges:
 
-* House–Brackmann scale
+* Subjective scales (e.g., House–Brackmann)
+* Observer variability
+* Non-trend-based tracking
+* Lack of AI support
 
-are:
+Our Solution:
 
-* Subjective
-* Inter-observer variable
-* Not trend-based
-* Not AI-assisted
+* Converts facial motion and speech patterns into measurable clinical indices
+* Enables objective severity scoring, side-specific asymmetry analysis, and data-driven clinical decisions
 
-This system converts facial movement into measurable clinical metrics.
+![Clinical Problem vs AI Solution](https://www.researchgate.net/publication/388963196/figure/fig1/AS%3A11431281309696991%401739502220425/Multimodal-AI-pipeline-in-healthcare-A-Diverse-medical-data-modalities-eg-images.png)
+Figure 2: AI-assisted measurement workflow
 
 ---
 
- System Architecture
+System Architecture
 
- High-Level Architecture Diagram
-
-![Image](https://www.researchgate.net/publication/352975738/figure/fig3/AS%3A11431281102529418%401669482668798/The-architecture-of-the-proposed-AI-and-IoT-based-healthcare-model.png)
-
-![Image](https://www.researchgate.net/publication/388963196/figure/fig1/AS%3A11431281309696991%401739502220425/Multimodal-AI-pipeline-in-healthcare-A-Diverse-medical-data-modalities-eg-images.png)
-
-![Image](https://www.researchgate.net/publication/352600525/figure/fig2/AS%3A11431281085421377%401663770361485/Working-flowchart-of-the-face-recognition-system.jpg)
-
-![Image](https://www.researchgate.net/publication/337834311/figure/fig4/AS%3A1095915679035393%401638298067907/Face-recognition-system-architecture.png)
+High-Level Architecture
 
 ```
-User (Patient / Doctor)
+User (Patient / Clinician)
         │
         ▼
-     app.py
+      app.py
         │
         ▼
-  ┌───────────────────┐
-  │    Core Engine    │
-  │-------------------│
-  │ facial_engine     │
-  │ speech_engine     │
-  │ clinical_scoring  │
-  └───────────────────┘
+  ┌─────────────────────────┐
+  │       Core Engine       │
+  │-------------------------│
+  │ facial_engine.py        │
+  │ speech_engine.py        │
+  │ clinical_scoring.py     │
+  └─────────────────────────┘
         │
         ▼
-  Analytics Layer
+    Analytics Layer
         │
         ▼
-  Database + Reports
+  Database + PDF Reporting
 ```
 
----
+![Architecture Diagram](https://www.researchgate.net/publication/337834311/figure/fig4/AS%3A1095915679035393%401638298067907/Face-recognition-system-architecture.png)
+*Figure 3: Modular system architecture for AI_Facial_Clinical*
 
+---
  System Workflow
 
- Facial Analysis Flow
-
-![Image](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/media/landmarks.1.jpg)
-
-![Image](https://www.researchgate.net/publication/346473876/figure/fig2/AS%3A974923510063104%401609451286013/D-face-symmetry-measurement.png)
-
-![Image](https://www.researchgate.net/publication/390975104/figure/fig1/AS%3A11431281390204043%401745248234703/Flowchart-of-AI-integration-in-clinical-practice-This-flowchart-developed-from.png)
-
-![Image](https://www.researchgate.net/publication/348599977/figure/fig1/AS%3A981688318427137%401611064142363/Flowchart-for-inclusion-of-AI-ML-based-medical-devices-approved-in-the-USA-and-CE-marked.png)
+ Facial Analysis Pipeline
 
 ```
 Camera Input
@@ -106,9 +101,12 @@ Motor Score Generation
 Clinical Grade Output
 ```
 
+![Facial Analysis Flow](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/media/landmarks.1.jpg)
+*Figure 4: Facial landmark detection and symmetry computation*
+
 ---
 
-Speech Analysis Flow
+ Speech Analysis Pipeline
 
 ```
 Audio Capture
@@ -126,15 +124,19 @@ Speech Clarity Score
 Motor-Speech Impairment Index
 ```
 
+![Speech Analysis Flow](https://www.researchgate.net/publication/346473876/figure/fig2/AS%3A974923510063104%401609451286013/D-face-symmetry-measurement.png)
+*Figure 5: Speech processing and impairment scoring workflow*
+
 ---
+
  Project Structure
 
 ```
 AI_Facial_Clinical/
 │
-├── app.py
-├── config.py
-├── requirements.txt
+├── app.py                 # Entry point
+├── config.py              # System configurations
+├── requirements.txt       # Dependencies
 │
 ├── core/
 │   ├── facial_engine.py
@@ -162,58 +164,54 @@ AI_Facial_Clinical/
 
 ---
 
-Patient View
-
-Designed for usability:
-
-* Emoji-based feedback
-* Weekly recovery graph
-* Improvement percentage
-* Simple clarity score
-
-Goal: Reduce anxiety. Increase engagement.
-
----
-
- Clinical View
-
-Designed for neurologists:
-
-* Raw symmetry ratios
-* Affected side quantification
-* Clinical severity classification
-* Historical session comparison
-* Exportable PDF documentation
-
----
-
-Progress Monitoring
-
-![Image](https://www.researchgate.net/publication/51641468/figure/fig1/AS%3A601755012300827%401520480983521/Line-graph-showing-count-of-total-patients-visiting-an-emergency-department-based-on.png)
-
-![Image](https://www.gooddata.com/img/blog/_2000xauto/hospital-operations-1-.png.webp)
-
-![Image](https://www.researchgate.net/publication/370710891/figure/fig1/AS%3A11431281157837687%401683920019217/Trend-analysis-showing-number-of-clinical-trials-by-completion-year-This-figure-only.png)
-
-![Image](https://www.researchgate.net/publication/344367243/figure/fig4/AS%3A939739700027400%401601062812829/Trend-analysis-of-the-number-of-participants-in-clinical-trials-on-gastrointestinal.jpg)
+ Patient-Centric View
 
 Features:
 
+* Emoji-based immediate feedback
+* Weekly recovery graphs
+* Improvement percentage tracking
+* Speech clarity index
+
+![Patient Dashboard](https://www.researchgate.net/publication/370710891/figure/fig1/AS%3A11431281157837687%401683920019217/Trend-analysis-showing-number-of-clinical-trials-by-completion-year-This-figure-only.png)
+*Figure 6: Patient progress dashboard example*
+
+---
+
+ Clinical Evaluation View
+
+Features:
+
+* Raw symmetry ratios per facial region
+* Affected side quantification
+* Severity classification
+* Historical session comparison
+* Exportable PDF reports
+
+![Clinical Dashboard](https://www.gooddata.com/img/blog/_2000xauto/hospital-operations-1-.png.webp)
+Figure 7: Neurologist dashboard for objective monitoring
+
+---
+
+ Longitudinal Progress Monitoring
+
 * Session-by-session tracking
-* Weekly motor improvement
-* Speech recovery trend
-* Side asymmetry reduction curve
+* Trend analysis of facial asymmetry and speech
+* Visual dashboards for rapid assessment
+
+![Progress Monitoring](https://www.researchgate.net/publication/344367243/figure/fig4/AS%3A939739700027400%401601062812829/Trend-analysis-of-the-number-of-participants-in-clinical-trials-on-gastrointestinal.jpg)
+Figure 8: Longitudinal trend visualization
 
 ---
 
  Core Technologies
 
-* Python
-* OpenCV
-* MediaPipe
-* NumPy
-* SQLite
-* ReportLab
+* Python 3.x
+* OpenCV & MediaPipe for facial processing
+* NumPy & Pandas for data computation
+* SQLite for session storage
+* ReportLab for PDF reports
+* Pretrained AI models (pickle)
 
 ---
 
@@ -227,27 +225,26 @@ python app.py
 ```
 
 ---
-
  Future Roadmap
 
-* Parkinson tremor detection module
-* Telemedicine integration
-* Cloud deployment
-* Multi-clinic database
+* Parkinson tremor detection & micro-expression analysis
+* Telemedicine & remote monitoring integration
+* Cloud-based multi-clinic database
 * AI-assisted predictive recovery modeling
-* FDA-style validation study
+* Clinical validation & regulatory compliance (FDA/CE marking)
 
----
+
 
  Vision
 
-To transform facial motor assessment from:
+Transform facial motor assessment from:
 
-Subjective observation
-→ to
-Objective, AI-driven, reproducible clinical measurement.
+> Subjective observation → Objective, AI-driven, reproducible clinical measurement
 
----
+Impact: Enhances patient outcomes, reduces inter-observer variability, and standardizes neurological assessment.
+
+
+
 
 
 
