@@ -20,3 +20,15 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
+.venv/
+.venv1/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.csv
+.env
+.DS_Store
+.idea/
+.vscode/
